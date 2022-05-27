@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.2"
+  bluez:
+    dependency: transitive
+    description:
+      name: bluez
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.7.9"
   boolean_selector:
     dependency: transitive
     description:
@@ -140,7 +147,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   convert:
     dependency: transitive
     description:
@@ -162,6 +169,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  dbus:
+    dependency: transitive
+    description:
+      name: dbus
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.8"
   dependency_validator:
     dependency: "direct dev"
     description:
@@ -175,7 +189,14 @@ packages:
       name: fake_async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.3.0"
+  ffi:
+    dependency: transitive
+    description:
+      name: ffi
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.1"
   file:
     dependency: transitive
     description:
@@ -205,9 +226,11 @@ packages:
   flutter_reactive_ble:
     dependency: "direct main"
     description:
-      path: "../packages/flutter_reactive_ble"
-      relative: true
-    source: path
+      path: "packages/flutter_reactive_ble"
+      ref: "nano-1.0.0"
+      resolved-ref: f995b5ab1bdfb5d45344dced75ded029464b2aa1
+      url: "https://github.com/Nanoleq/flutter_reactive_ble"
+    source: git
     version: "5.0.2"
   flutter_test:
     dependency: "direct dev"
@@ -318,7 +341,7 @@ packages:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.4"
   meta:
     dependency: transitive
     description:
@@ -353,7 +376,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   pedantic:
     dependency: transitive
     description:
@@ -361,13 +384,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.2"
   pool:
     dependency: transitive
     description:
@@ -381,7 +411,7 @@ packages:
       name: protobuf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   provider:
     dependency: "direct main"
     description:
@@ -403,19 +433,67 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
-  reactive_ble_mobile:
-    dependency: "direct overridden"
+  quick_blue:
+    dependency: transitive
     description:
-      path: "../packages/reactive_ble_mobile"
-      relative: true
-    source: path
+      name: quick_blue
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0-dev.0"
+  quick_blue_linux:
+    dependency: transitive
+    description:
+      name: quick_blue_linux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
+  quick_blue_macos:
+    dependency: transitive
+    description:
+      name: quick_blue_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.1+2"
+  quick_blue_platform_interface:
+    dependency: transitive
+    description:
+      name: quick_blue_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2"
+  quick_blue_windows:
+    dependency: transitive
+    description:
+      name: quick_blue_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2+1"
+  reactive_ble_desktop:
+    dependency: transitive
+    description:
+      path: "packages/reactive_ble_desktop"
+      ref: "nano-5.0.2+"
+      resolved-ref: c7d026e59489eeaa726181b9dd29076d6003997b
+      url: "https://github.com/Nanoleq/flutter_reactive_ble"
+    source: git
+    version: "0.0.1"
+  reactive_ble_mobile:
+    dependency: transitive
+    description:
+      path: "packages/reactive_ble_mobile"
+      ref: "nano-5.0.2+"
+      resolved-ref: c7d026e59489eeaa726181b9dd29076d6003997b
+      url: "https://github.com/Nanoleq/flutter_reactive_ble"
+    source: git
     version: "5.0.2"
   reactive_ble_platform_interface:
     dependency: transitive
     description:
-      name: reactive_ble_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "packages/reactive_ble_platform_interface"
+      ref: "nano-5.0.2+"
+      resolved-ref: c7d026e59489eeaa726181b9dd29076d6003997b
+      url: "https://github.com/Nanoleq/flutter_reactive_ble"
+    source: git
     version: "5.0.2"
   shelf:
     dependency: transitive
@@ -449,7 +527,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   stack_trace:
     dependency: transitive
     description:
@@ -491,7 +569,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.8"
+    version: "0.4.9"
   timing:
     dependency: transitive
     description:
@@ -512,7 +590,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   watcher:
     dependency: transitive
     description:
@@ -527,6 +605,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.4.1"
   yaml:
     dependency: transitive
     description:
@@ -535,5 +620,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
-  flutter: ">=2.0.0"
+  dart: ">=2.17.0 <3.0.0"
+  flutter: ">=2.2.0"

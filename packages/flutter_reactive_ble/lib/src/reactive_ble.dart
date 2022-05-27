@@ -8,6 +8,7 @@ import 'package:flutter_reactive_ble/src/device_scanner.dart';
 import 'package:flutter_reactive_ble/src/discovered_devices_registry.dart';
 import 'package:flutter_reactive_ble/src/rx_ext/repeater.dart';
 import 'package:meta/meta.dart';
+import 'package:reactive_ble_desktop/reactive_ble_desktop.dart';
 import 'package:reactive_ble_mobile/reactive_ble_mobile.dart';
 import 'package:reactive_ble_platform_interface/reactive_ble_platform_interface.dart';
 
@@ -104,8 +105,13 @@ class FlutterReactiveBle {
         print,
       );
 
-      ReactiveBlePlatform.instance =
-          const ReactiveBleMobilePlatformFactory().create();
+      if (Platform.isAndroid || Platform.isIOS) {
+        ReactiveBlePlatform.instance =
+            const ReactiveBleMobilePlatformFactory().create();
+      } else {
+        ReactiveBlePlatform.instance =
+            const ReactiveBleDesktopPlatformFactory().create();
+      }
 
       _blePlatform = ReactiveBlePlatform.instance;
 
