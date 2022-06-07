@@ -11,6 +11,24 @@ class ReactiveBleDesktopPlatformFactory {
 /// An implementation of ReactiveBlePlatform using quick_blue
 class ReactiveBleDesktopPlatform extends ReactiveBlePlatform {
   ReactiveBleDesktopPlatform() {
+    _bleStatusController = StreamController<BleStatus>.broadcast(
+      onListen: () {
+        _statusTimer = Timer.periodic(const Duration(seconds: 1), (t) async {
+          final available = await QuickBlue.isBluetoothAvailable();
+          final newStatus = available ? BleStatus.ready : BleStatus.unsupported;
+          if (_lastStatus != newStatus) {
+            _bleStatusController.add(newStatus);
+            _lastStatus = newStatus;
+          }
+        });
+      },
+      onCancel: () {
+        _statusTimer?.cancel();
+        _statusTimer = null;
+        _lastStatus = null;
+      },
+    );
+
     _characteristicValueController = StreamController.broadcast(
       onListen: () {
         QuickBlue.setValueHandler(
@@ -55,6 +73,12 @@ class ReactiveBleDesktopPlatform extends ReactiveBlePlatform {
   late final StreamController<CharacteristicValue>
       _characteristicValueController;
 
+  late final StreamController<BleStatus> _bleStatusController;
+
+  BleStatus? _lastStatus;
+
+  Timer? _statusTimer;
+
   ///[Implemented Methods]
   @override
   Future<void> initialize() async {}
@@ -66,9 +90,7 @@ class ReactiveBleDesktopPlatform extends ReactiveBlePlatform {
   }
 
   @override
-  Stream<BleStatus> get bleStatusStream => QuickBlue.isBluetoothAvailable()
-      .asStream()
-      .map((event) => event ? BleStatus.ready : BleStatus.unsupported);
+  Stream<BleStatus> get bleStatusStream => _bleStatusController.stream;
 
   @override
   Stream<ScanResult> get scanStream =>
