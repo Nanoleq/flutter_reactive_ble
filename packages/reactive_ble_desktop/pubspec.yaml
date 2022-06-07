@@ -1,6 +1,6 @@
 name: reactive_ble_desktop
 description: A non official desktop implementation of flutter_reactive_ble for desktop relying on quick_blue
-version: 1.0.1
+version: 1.0.2
 publish_to: "none"
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
     git:
       url: https://github.com/Nanoleq/flutter_reactive_ble
       path: packages/reactive_ble_platform_interface
-      ref: nano-1.0.0
+      ref: nano-1.0.2
 
 dev_dependencies:
   flutter_test:

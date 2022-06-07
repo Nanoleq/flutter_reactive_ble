@@ -17,7 +17,7 @@ dependencies:
     git:
       url: https://github.com/Nanoleq/flutter_reactive_ble
       path: packages/flutter_reactive_ble
-      ref: nano-1.0.0
+      ref: nano-1.0.2
 
   provider: ^6.0.1
 
