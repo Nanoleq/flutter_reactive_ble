@@ -54,6 +54,8 @@ open class ReactiveBleClient(private val context: Context) : BleClient {
     override fun initializeClient() {
         activeConnections = mutableMapOf()
         rxBleClient = RxBleClient.create(context)
+        enableDebugLogging()
+
     }
 
     /*yes spread operator is not performant but after kotlin v1.60 it is less bad and it is also the
