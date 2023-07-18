@@ -106,8 +106,8 @@ class FlutterReactiveBle {
 
       ReactiveBlePlatform.instance =
           const ReactiveBleMobilePlatformFactory().create(
-        logger: _debugLogger,
-      );
+//        logger: _debugLogger,
+              );
 
       _blePlatform = ReactiveBlePlatform.instance;
 
